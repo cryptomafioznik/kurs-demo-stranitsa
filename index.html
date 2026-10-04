@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Разговорный английский для работы и переезда — [ВСТАВИТЬ: ваше имя]</title>
+<meta name="description" content="Онлайн-уроки разговорного английского по Zoom для взрослых: для работы и переезда. Бесплатный пробный урок.">
+<style>
+:root{
+  --bg:#faf8f5; --card:#fff; --text:#1d2433; --muted:#5b6475;
+  --accent:#2f5bea; --accent-d:#2246c0; --line:#e6e2da; --r:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);font-size:17px;line-height:1.55}
+a{color:var(--accent)}
+img{max-width:100%;display:block}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+
+/* Заглушки — специально заметные */
+.ph{background:#fff1a8;border:2px dashed #d69e00;color:#5a4300;padding:1px 6px;border-radius:6px;font-weight:600;font-size:.95em}
+.ph-block{display:block;padding:14px;margin:8px 0}
+
+/* Шапка */
+header{position:sticky;top:0;z-index:10;background:rgba(250,248,245,.95);border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:60px}
+.logo{font-weight:700;font-size:16px}
+.btn-sm{background:var(--accent);color:#fff;text-decoration:none;padding:9px 14px;border-radius:10px;font-weight:600;font-size:15px;white-space:nowrap}
+
+/* Кнопка */
+.btn{display:block;width:100%;background:var(--accent);color:#fff;border:0;border-radius:12px;padding:16px 22px;font:inherit;font-weight:600;text-align:center;text-decoration:none;cursor:pointer}
+.btn:hover,.btn-sm:hover{background:var(--accent-d)}
+.btn:focus-visible,.btn-sm:focus-visible,input:focus-visible{outline:3px solid #9db4ff;outline-offset:2px}
+
+/* Секции */
+section{padding:48px 0}
+section+section{border-top:1px solid var(--line)}
+h1{font-size:30px;line-height:1.2;margin-bottom:14px}
+h2{font-size:24px;line-height:1.25;margin-bottom:18px}
+h3{font-size:18px;margin-bottom:6px}
+.lead{color:var(--muted);font-size:18px;margin-bottom:22px}
+.tag{display:inline-block;background:#e7edff;color:var(--accent-d);font-weight:600;font-size:14px;padding:5px 10px;border-radius:999px;margin-bottom:16px}
+.note{color:var(--muted);font-size:15px;margin-top:12px;text-align:center}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.grid{display:grid;gap:14px}
+
+/* О себе */
+.photo{aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;text-align:center;border-radius:var(--r);margin:0 0 18px;max-width:320px}
+
+/* Как проходят занятия */
+.list{list-style:none;display:grid;gap:12px}
+.list li{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px}
+.list b{display:block;margin-bottom:2px}
+
+.steps{list-style:none;counter-reset:s;display:grid;gap:12px;margin-top:24px}
+.steps li{counter-increment:s;display:flex;gap:14px;align-items:flex-start}
+.steps li::before{content:counter(s);flex:0 0 34px;height:34px;border-radius:50%;background:var(--accent);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
+
+/* Цены */
+.price-free{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
+.price{font-size:28px;font-weight:700;margin:4px 0}
+
+/* Отзывы */
+.review .who{color:var(--muted);font-size:15px;margin-top:10px}
+
+/* Форма */
+form{display:grid;gap:18px}
+label,.legend{font-weight:600;display:block;margin-bottom:6px}
+input[type=text],input[type=tel]{width:100%;min-height:50px;padding:12px 14px;font:inherit;font-size:17px;border:1px solid #cfc9bf;border-radius:10px;background:#fff;color:var(--text)}
+fieldset{border:0}
+.chips{display:grid;gap:8px}
+.chip{display:flex;align-items:center;gap:10px;min-height:50px;padding:12px 14px;border:1px solid #cfc9bf;border-radius:10px;background:#fff;cursor:pointer;font-weight:400}
+.chip:has(input:checked){border-color:var(--accent);background:#eef2ff}
+.chip input,.consent input{width:20px;height:20px;accent-color:var(--accent);flex:0 0 auto}
+.consent{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:15px;color:var(--muted)}
+.hint{color:var(--muted);font-size:14px;margin-top:6px}
+#thanks{text-align:center;padding:32px 20px}
+#thanks h3{font-size:22px;margin-bottom:8px}
+
+footer{padding:32px 0 40px;border-top:1px solid var(--line);color:var(--muted);font-size:15px}
+footer p+p{margin-top:8px}
+.privacy{font-size:15px;color:var(--muted)}
+
+/* Планшет и компьютер */
+@media (min-width:768px){
+  body{font-size:18px}
+  section{padding:72px 0}
+  h1{font-size:44px}
+  h2{font-size:30px}
+  .hero .btn{display:inline-block;width:auto}
+  .about{display:grid;grid-template-columns:300px 1fr;gap:36px;align-items:start}
+  .photo{margin:0}
+  .list{grid-template-columns:1fr 1fr}
+  .g2{grid-template-columns:1fr 1fr}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .chips{grid-template-columns:repeat(3,1fr)}
+  .form-card{max-width:560px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <span class="logo"><span class="ph">[ВСТАВИТЬ: ваше имя]</span></span>
+    <a class="btn-sm" href="#signup">Пробный урок</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- 1. Первый экран -->
+  <section class="hero">
+    <div class="wrap">
+      <span class="tag">Онлайн по Zoom · для взрослых</span>
+      <h1>Разговорный английский для работы и переезда</h1>
+      <p class="lead">Первый урок бесплатный. <span class="ph">[ВСТАВИТЬ: 1–2 предложения — чем вы помогаете и какой результат получает ученик]</span></p>
+      <a class="btn" href="#signup">Записаться на бесплатный пробный урок</a>
+    </div>
+  </section>
+
+  <!-- 2. О себе -->
+  <section id="about">
+    <div class="wrap about">
+      <div class="photo ph ph-block">[ВСТАВИТЬ: ваше фото, вертикальное, примерно 800×1000 px]</div>
+      <div>
+        <h2>Обо мне</h2>
+        <p class="ph ph-block">[ВСТАВИТЬ: кто вы, опыт преподавания, образование или сертификаты]</p>
+        <p class="ph ph-block">[ВСТАВИТЬ: ваш подход — как вы учите говорить]</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Как проходят занятия -->
+  <section id="how">
+    <div class="wrap">
+      <h2>Как проходят занятия</h2>
+      <ul class="list">
+        <li><b>Формат</b>Онлайн по Zoom, индивидуально <span class="ph">[ВСТАВИТЬ: подтвердите, что занятия индивидуальные, или исправьте]</span></li>
+        <li><b>Длительность урока</b><span class="ph">[ВСТАВИТЬ: минут]</span></li>
+        <li><b>Как часто</b><span class="ph">[ВСТАВИТЬ: рекомендуемое число уроков в неделю]</span></li>
+        <li><b>Пробный урок</b>Бесплатно. <span class="ph">[ВСТАВИТЬ: что происходит на пробном уроке и сколько он длится]</span></li>
+      </ul>
+
+      <h3 style="margin-top:32px">Как записаться</h3>
+      <ol class="steps">
+        <li><span>Оставьте заявку в форме ниже — это займёт минуту.</span></li>
+        <li><span>Я напишу вам в Telegram или позвоню в течение 24 часов.</span></li>
+        <li><span>Договоримся об удобном времени для пробного урока.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 4. Цены -->
+  <section id="prices">
+    <div class="wrap">
+      <h2>Цены</h2>
+      <div class="grid g2">
+        <div class="card price-free">
+          <h3>Пробный урок</h3>
+          <p class="price">Бесплатно</p>
+          <p><span class="ph">[ВСТАВИТЬ: длительность пробного урока]</span></p>
+        </div>
+        <div class="card">
+          <h3><span class="ph">[ВСТАВИТЬ: название — например, разовый урок или пакет]</span></h3>
+          <p class="price"><span class="ph">[ВСТАВИТЬ: цена и валюта]</span></p>
+          <p><span class="ph">[ВСТАВИТЬ: что входит, длительность, условия оплаты]</span></p>
+        </div>
+      </div>
+      <p class="hint">Если тарифов больше — скопируйте второй блок.</p>
+    </div>
+  </section>
+
+  <!-- 5. Отзывы -->
+  <section id="reviews">
+    <div class="wrap">
+      <h2>Отзывы учеников</h2>
+      <div class="grid g3">
+        <figure class="card review">
+          <blockquote class="ph ph-block">[ВСТАВИТЬ: текст отзыва 1 — с согласия ученика]</blockquote>
+          <figcaption class="who"><span class="ph">[ВСТАВИТЬ: имя, цель — работа или переезд]</span></figcaption>
+        </figure>
+        <figure class="card review">
+          <blockquote class="ph ph-block">[ВСТАВИТЬ: текст отзыва 2 — с согласия ученика]</blockquote>
+          <figcaption class="who"><span class="ph">[ВСТАВИТЬ: имя, цель]</span></figcaption>
+        </figure>
+        <figure class="card review">
+          <blockquote class="ph ph-block">[ВСТАВИТЬ: текст отзыва 3 или удалите этот блок]</blockquote>
+          <figcaption class="who"><span class="ph">[ВСТАВИТЬ: имя, цель]</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Форма заявки -->
+  <section id="signup">
+    <div class="wrap">
+      <h2>Запись на бесплатный пробный урок</h2>
+      <p class="lead">Оставьте контакты — я напишу вам в течение 24 часов.</p>
+
+      <div class="card form-card">
+        <form id="form" novalidate>
+          <div>
+            <label for="name">Имя</label>
+            <input type="text" id="name" name="name" autocomplete="given-name" required maxlength="60">
+          </div>
+
+          <div>
+            <label for="contact">Telegram или телефон</label>
+            <input type="text" id="contact" name="contact" autocomplete="tel" required
+                   inputmode="text" placeholder="@username или номер телефона"
+                   pattern="^(@[A-Za-z0-9_]{5,32}|\+?[0-9][0-9\s\-()]{6,19})$">
+            <p class="hint">Например: @ivan_petrov или +420 123 456 789</p>
+          </div>
+
+          <fieldset>
+            <span class="legend" id="goal-l">Зачем вам английский?</span>
+            <div class="chips" role="radiogroup" aria-labelledby="goal-l">
+              <label class="chip"><input type="radio" name="goal" value="work" required> Для работы</label>
+              <label class="chip"><input type="radio" name="goal" value="relocation"> Для переезда</label>
+              <label class="chip"><input type="radio" name="goal" value="other"> Другое</label>
+            </div>
+          </fieldset>
+
+          <label class="consent">
+            <input type="checkbox" name="consent" required>
+            <span>Я согласен(-на) на обработку моих данных, чтобы со мной связались по поводу пробного урока. <a href="#privacy">Политика конфиденциальности</a></span>
+          </label>
+
+          <p id="err" class="hint" role="alert" style="color:#b42318" hidden></p>
+
+          <button class="btn" type="submit">Записаться на пробный урок</button>
+        </form>
+
+        <div id="thanks" role="status" tabindex="-1" hidden>
+          <h3>Спасибо!</h3>
+          <p>Заявка принята. Я напишу вам в течение 24 часов.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Контакты: <span class="ph">[ВСТАВИТЬ: Telegram и/или email]</span></p>
+    <div id="privacy" class="privacy" style="margin-top:20px">
+      <h3>Политика конфиденциальности</h3>
+      <p class="ph ph-block">[ВСТАВИТЬ: текст политики — кто обрабатывает данные, какие данные (имя, контакт, цель), зачем, сколько хранятся, как запросить удаление. Проверьте требования GDPR, если у вас есть ученики из ЕС]</p>
+    </div>
+    <p style="margin-top:20px">© <span class="ph">[ВСТАВИТЬ: ваше имя]</span></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var f = document.getElementById('form');
+  var contact = document.getElementById('contact');
+  var err = document.getElementById('err');
+  var thanks = document.getElementById('thanks');
+
+  contact.addEventListener('input', function(){ contact.setCustomValidity(''); });
+
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    err.hidden = true;
+
+    if (contact.validity.patternMismatch) {
+      contact.setCustomValidity('Укажите Telegram в формате @username или номер телефона');
+    }
+
+    if (!f.checkValidity()) {
+      var bad = f.querySelector(':invalid');
+      var msg = 'Заполните все поля и поставьте галочку согласия.';
+      if (bad === contact && contact.validity.patternMismatch) msg = 'Укажите Telegram в формате @username (от 5 символов) или номер телефона.';
+      err.textContent = msg;
+      err.hidden = false;
+      if (bad) bad.focus();
+      return;
+    }
+
+    // Отправка будет подключена на следующем шаге.
+    console.log('Заявка (тест):', Object.fromEntries(new FormData(f)));
+
+    f.hidden = true;
+    thanks.hidden = false;
+    thanks.focus();
+  });
+})();
+</script>
+</body>
+</html>
