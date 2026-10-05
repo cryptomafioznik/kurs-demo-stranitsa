@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Разговорный английский для работы и переезда — [ВСТАВИТЬ: ваше имя]</title>
-<meta name="description" content="Онлайн-уроки разговорного английского по Zoom для взрослых: для работы и переезда. Бесплатный пробный урок.">
+<title>Разговорный английский для работы и переезда — Анна</title>
+<meta name="description" content="Учебный пример: онлайн-уроки разговорного английского по Zoom для взрослых. Бесплатный пробный урок.">
 <style>
 :root{
   --bg:#faf8f5; --card:#fff; --text:#1d2433; --muted:#5b6475;
@@ -17,9 +17,11 @@ a{color:var(--accent)}
 img{max-width:100%;display:block}
 .wrap{max-width:960px;margin:0 auto;padding:0 20px}
 
-/* Заглушки — специально заметные */
+/* Заглушка — специально заметная */
 .ph{background:#fff1a8;border:2px dashed #d69e00;color:#5a4300;padding:1px 6px;border-radius:6px;font-weight:600;font-size:.95em}
-.ph-block{display:block;padding:14px;margin:8px 0}
+
+/* Полоса «учебный пример» */
+.demo-bar{background:#1d2433;color:#ffe066;font-size:14px;line-height:1.4;font-weight:600;text-align:center;padding:10px 16px}
 
 /* Шапка */
 header{position:sticky;top:0;z-index:10;background:rgba(250,248,245,.95);border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
@@ -30,6 +32,7 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;gap:1
 /* Кнопка */
 .btn{display:block;width:100%;background:var(--accent);color:#fff;border:0;border-radius:12px;padding:16px 22px;font:inherit;font-weight:600;text-align:center;text-decoration:none;cursor:pointer}
 .btn:hover,.btn-sm:hover{background:var(--accent-d)}
+.btn:disabled{opacity:.65;cursor:wait}
 .btn:focus-visible,.btn-sm:focus-visible,input:focus-visible{outline:3px solid #9db4ff;outline-offset:2px}
 
 /* Секции */
@@ -40,13 +43,13 @@ h2{font-size:24px;line-height:1.25;margin-bottom:18px}
 h3{font-size:18px;margin-bottom:6px}
 .lead{color:var(--muted);font-size:18px;margin-bottom:22px}
 .tag{display:inline-block;background:#e7edff;color:var(--accent-d);font-weight:600;font-size:14px;padding:5px 10px;border-radius:999px;margin-bottom:16px}
-.note{color:var(--muted);font-size:15px;margin-top:12px;text-align:center}
+p+p{margin-top:12px}
 
 .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px}
 .grid{display:grid;gap:14px}
 
-/* О себе */
-.photo{aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;text-align:center;border-radius:var(--r);margin:0 0 18px;max-width:320px}
+/* О себе: круг с инициалом */
+.avatar{width:160px;height:160px;border-radius:50%;background:var(--accent);color:#fff;font-size:72px;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 0 22px}
 
 /* Как проходят занятия */
 .list{list-style:none;display:grid;gap:12px}
@@ -60,9 +63,7 @@ h3{font-size:18px;margin-bottom:6px}
 /* Цены */
 .price-free{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
 .price{font-size:28px;font-weight:700;margin:4px 0}
-
-/* Отзывы */
-.review .who{color:var(--muted);font-size:15px;margin-top:10px}
+.example{display:inline-block;background:#fff1a8;color:#5a4300;font-size:13px;font-weight:600;padding:2px 8px;border-radius:999px;margin-bottom:8px}
 
 /* Форма */
 form{display:grid;gap:18px}
@@ -75,11 +76,14 @@ fieldset{border:0}
 .chip input,.consent input{width:20px;height:20px;accent-color:var(--accent);flex:0 0 auto}
 .consent{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:15px;color:var(--muted)}
 .hint{color:var(--muted);font-size:14px;margin-top:6px}
+.demo-note{background:#fff8d6;border:1px solid #f0d878;border-radius:10px;padding:10px 12px;font-size:15px;color:#5a4300}
+.error{color:#b42318;font-size:15px}
+/* Ловушка для ботов: скрыта от людей */
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 #thanks{text-align:center;padding:32px 20px}
 #thanks h3{font-size:22px;margin-bottom:8px}
 
 footer{padding:32px 0 40px;border-top:1px solid var(--line);color:var(--muted);font-size:15px}
-footer p+p{margin-top:8px}
 .privacy{font-size:15px;color:var(--muted)}
 
 /* Планшет и компьютер */
@@ -89,10 +93,9 @@ footer p+p{margin-top:8px}
   h1{font-size:44px}
   h2{font-size:30px}
   .hero .btn{display:inline-block;width:auto}
-  .about{display:grid;grid-template-columns:300px 1fr;gap:36px;align-items:start}
-  .photo{margin:0}
+  .about{display:grid;grid-template-columns:200px 1fr;gap:36px;align-items:start}
+  .avatar{margin:0}
   .list{grid-template-columns:1fr 1fr}
-  .g2{grid-template-columns:1fr 1fr}
   .g3{grid-template-columns:repeat(3,1fr)}
   .chips{grid-template-columns:repeat(3,1fr)}
   .form-card{max-width:560px}
@@ -101,9 +104,11 @@ footer p+p{margin-top:8px}
 </head>
 <body>
 
+<div class="demo-bar" role="note">Учебный пример из курса «Сделай своё с ИИ». Форма настоящая: заявка уйдёт автору курса в тестовый бот.</div>
+
 <header>
   <div class="wrap">
-    <span class="logo"><span class="ph">[ВСТАВИТЬ: ваше имя]</span></span>
+    <span class="logo">Анна · английский</span>
     <a class="btn-sm" href="#signup">Пробный урок</a>
   </div>
 </header>
@@ -115,7 +120,7 @@ footer p+p{margin-top:8px}
     <div class="wrap">
       <span class="tag">Онлайн по Zoom · для взрослых</span>
       <h1>Разговорный английский для работы и переезда</h1>
-      <p class="lead">Первый урок бесплатный. <span class="ph">[ВСТАВИТЬ: 1–2 предложения — чем вы помогаете и какой результат получает ученик]</span></p>
+      <p class="lead">Первый урок бесплатный. Помогаю взрослым заговорить по-английски: на рабочих созвонах, собеседованиях и в обычных ситуациях после переезда.</p>
       <a class="btn" href="#signup">Записаться на бесплатный пробный урок</a>
     </div>
   </section>
@@ -123,11 +128,11 @@ footer p+p{margin-top:8px}
   <!-- 2. О себе -->
   <section id="about">
     <div class="wrap about">
-      <div class="photo ph ph-block">[ВСТАВИТЬ: ваше фото, вертикальное, примерно 800×1000 px]</div>
+      <div class="avatar" role="img" aria-label="Анна">А</div>
       <div>
         <h2>Обо мне</h2>
-        <p class="ph ph-block">[ВСТАВИТЬ: кто вы, опыт преподавания, образование или сертификаты]</p>
-        <p class="ph ph-block">[ВСТАВИТЬ: ваш подход — как вы учите говорить]</p>
+        <p>Меня зовут Анна, я преподаю разговорный английский взрослым онлайн. Ко мне приходят те, кому язык нужен для работы или переезда: созвоны с коллегами, собеседования, разговор с арендодателем или врачом.</p>
+        <p>На уроках больше всего говорите вы. Темы подбираем под ваши задачи, а ошибки разбираем в конце, чтобы не перебивать вас на полуслове.</p>
       </div>
     </div>
   </section>
@@ -137,10 +142,10 @@ footer p+p{margin-top:8px}
     <div class="wrap">
       <h2>Как проходят занятия</h2>
       <ul class="list">
-        <li><b>Формат</b>Онлайн по Zoom, индивидуально <span class="ph">[ВСТАВИТЬ: подтвердите, что занятия индивидуальные, или исправьте]</span></li>
-        <li><b>Длительность урока</b><span class="ph">[ВСТАВИТЬ: минут]</span></li>
-        <li><b>Как часто</b><span class="ph">[ВСТАВИТЬ: рекомендуемое число уроков в неделю]</span></li>
-        <li><b>Пробный урок</b>Бесплатно. <span class="ph">[ВСТАВИТЬ: что происходит на пробном уроке и сколько он длится]</span></li>
+        <li><b>Формат</b>Онлайн по Zoom, индивидуально.</li>
+        <li><b>Длительность урока</b>60 минут.</li>
+        <li><b>Как часто</b>1–2 раза в неделю: так навык не забывается между уроками.</li>
+        <li><b>Пробный урок</b>Бесплатно, 30 минут. Знакомимся, определяем ваш уровень и цель, обсуждаем план занятий.</li>
       </ul>
 
       <h3 style="margin-top:32px">Как записаться</h3>
@@ -156,44 +161,29 @@ footer p+p{margin-top:8px}
   <section id="prices">
     <div class="wrap">
       <h2>Цены</h2>
-      <div class="grid g2">
+      <div class="grid g3">
         <div class="card price-free">
           <h3>Пробный урок</h3>
           <p class="price">Бесплатно</p>
-          <p><span class="ph">[ВСТАВИТЬ: длительность пробного урока]</span></p>
+          <p>30 минут, без обязательств.</p>
         </div>
         <div class="card">
-          <h3><span class="ph">[ВСТАВИТЬ: название — например, разовый урок или пакет]</span></h3>
-          <p class="price"><span class="ph">[ВСТАВИТЬ: цена и валюта]</span></p>
-          <p><span class="ph">[ВСТАВИТЬ: что входит, длительность, условия оплаты]</span></p>
+          <span class="example">Пример цены</span>
+          <h3>Разовый урок</h3>
+          <p class="price">30 €</p>
+          <p>60 минут. Оплата перед уроком.</p>
+        </div>
+        <div class="card">
+          <span class="example">Пример цены</span>
+          <h3>Пакет из 10 уроков</h3>
+          <p class="price">270 €</p>
+          <p>По 60 минут. Выгоднее разовых уроков.</p>
         </div>
       </div>
-      <p class="hint">Если тарифов больше — скопируйте второй блок.</p>
     </div>
   </section>
 
-  <!-- 5. Отзывы -->
-  <section id="reviews">
-    <div class="wrap">
-      <h2>Отзывы учеников</h2>
-      <div class="grid g3">
-        <figure class="card review">
-          <blockquote class="ph ph-block">[ВСТАВИТЬ: текст отзыва 1 — с согласия ученика]</blockquote>
-          <figcaption class="who"><span class="ph">[ВСТАВИТЬ: имя, цель — работа или переезд]</span></figcaption>
-        </figure>
-        <figure class="card review">
-          <blockquote class="ph ph-block">[ВСТАВИТЬ: текст отзыва 2 — с согласия ученика]</blockquote>
-          <figcaption class="who"><span class="ph">[ВСТАВИТЬ: имя, цель]</span></figcaption>
-        </figure>
-        <figure class="card review">
-          <blockquote class="ph ph-block">[ВСТАВИТЬ: текст отзыва 3 или удалите этот блок]</blockquote>
-          <figcaption class="who"><span class="ph">[ВСТАВИТЬ: имя, цель]</span></figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- 6. Форма заявки -->
+  <!-- 5. Форма заявки -->
   <section id="signup">
     <div class="wrap">
       <h2>Запись на бесплатный пробный урок</h2>
@@ -208,9 +198,9 @@ footer p+p{margin-top:8px}
 
           <div>
             <label for="contact">Telegram или телефон</label>
-            <input type="text" id="contact" name="contact" autocomplete="tel" required
+            <input type="text" id="contact" name="contact" autocomplete="tel" required maxlength="40"
                    inputmode="text" placeholder="@username или номер телефона"
-                   pattern="^(@[A-Za-z0-9_]{5,32}|\+?[0-9][0-9\s\-()]{6,19})$">
+                   pattern="^(@[A-Za-z0-9_]{5,32}|\+?[0-9][0-9\s\-\(\)]{6,19})$">
             <p class="hint">Например: @ivan_petrov или +420 123 456 789</p>
           </div>
 
@@ -223,19 +213,27 @@ footer p+p{margin-top:8px}
             </div>
           </fieldset>
 
+          <!-- Ловушка для ботов: людям не видна, боты её заполняют -->
+          <div class="hp" aria-hidden="true">
+            <label for="website">Не заполняйте это поле</label>
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+          </div>
+
           <label class="consent">
             <input type="checkbox" name="consent" required>
-            <span>Я согласен(-на) на обработку моих данных, чтобы со мной связались по поводу пробного урока. <a href="#privacy">Политика конфиденциальности</a></span>
+            <span>Я согласен(-на), что данные из формы увидит автор курса. <a href="#privacy">Политика конфиденциальности</a></span>
           </label>
 
-          <p id="err" class="hint" role="alert" style="color:#b42318" hidden></p>
+          <p class="demo-note">Это учебный пример: заявку получит автор курса, а не Анна. Можно ввести вымышленные данные.</p>
 
-          <button class="btn" type="submit">Записаться на пробный урок</button>
+          <p id="err" class="error" role="alert" hidden></p>
+
+          <button class="btn" id="submit" type="submit">Записаться на пробный урок</button>
         </form>
 
         <div id="thanks" role="status" tabindex="-1" hidden>
           <h3>Спасибо!</h3>
-          <p>Заявка принята. Я напишу вам в течение 24 часов.</p>
+          <p>Заявка отправлена. Это учебный пример: её получил автор курса в тестовый бот, Анна вам не напишет.</p>
         </div>
       </div>
     </div>
@@ -245,21 +243,28 @@ footer p+p{margin-top:8px}
 
 <footer>
   <div class="wrap">
-    <p>Контакты: <span class="ph">[ВСТАВИТЬ: Telegram и/или email]</span></p>
+    <p>Анна — вымышленный репетитор из учебного примера курса «Сделай своё с ИИ».</p>
     <div id="privacy" class="privacy" style="margin-top:20px">
       <h3>Политика конфиденциальности</h3>
-      <p class="ph ph-block">[ВСТАВИТЬ: текст политики — кто обрабатывает данные, какие данные (имя, контакт, цель), зачем, сколько хранятся, как запросить удаление. Проверьте требования GDPR, если у вас есть ученики из ЕС]</p>
+      <p>Данные из формы (имя, контакт, цель) видит только автор курса. Они хранятся в Google Таблице и в Telegram. По вашей просьбе данные удаляются — напишите автору курса: <a href="https://www.threads.com/@kaushinskiy">@kaushinskiy в Threads</a>.</p>
     </div>
-    <p style="margin-top:20px">© <span class="ph">[ВСТАВИТЬ: ваше имя]</span></p>
   </div>
 </footer>
 
 <script>
 (function(){
+  // Адрес веб-приложения Google Apps Script
+  var ENDPOINT = 'https://script.google.com/macros/s/AKfycbzfPrQTWLyyM_0elc2Ju-UdmZg436C0sG-nVMV6jWZNUU_hwyNYgl8ZsDbxALdk20iKCA/exec';
+
   var f = document.getElementById('form');
   var contact = document.getElementById('contact');
   var err = document.getElementById('err');
   var thanks = document.getElementById('thanks');
+  var btn = document.getElementById('submit');
+  var btnText = btn.textContent;
+  var FAIL = 'Не получилось отправить заявку. Попробуйте ещё раз через минуту.';
+
+  function showErr(msg){ err.textContent = msg; err.hidden = false; }
 
   contact.addEventListener('input', function(){ contact.setCustomValidity(''); });
 
@@ -275,18 +280,45 @@ footer p+p{margin-top:8px}
       var bad = f.querySelector(':invalid');
       var msg = 'Заполните все поля и поставьте галочку согласия.';
       if (bad === contact && contact.validity.patternMismatch) msg = 'Укажите Telegram в формате @username (от 5 символов) или номер телефона.';
-      err.textContent = msg;
-      err.hidden = false;
+      showErr(msg);
       if (bad) bad.focus();
       return;
     }
 
-    // Отправка будет подключена на следующем шаге.
-    console.log('Заявка (тест):', Object.fromEntries(new FormData(f)));
+    if (!/^https:\/\/script\.google\.com\/macros\/s\/.+\/exec$/.test(ENDPOINT)) {
+      console.error('ENDPOINT не задан или неверный. Вставьте адрес веб-приложения, заканчивающийся на /exec.');
+      showErr(FAIL);
+      return;
+    }
 
-    f.hidden = true;
-    thanks.hidden = false;
-    thanks.focus();
+    btn.disabled = true;
+    btn.textContent = 'Отправляю…';
+
+    var ctrl = new AbortController();
+    var timer = setTimeout(function(){ ctrl.abort(); }, 20000);
+
+    // Обычная форма (application/x-www-form-urlencoded) — Google Apps Script принимает её без лишних проверок браузера
+    fetch(ENDPOINT, {
+      method: 'POST',
+      body: new URLSearchParams(new FormData(f)),
+      signal: ctrl.signal
+    })
+      .then(function(r){ return r.json(); })
+      .then(function(d){
+        if (!d || !d.ok) throw new Error('Сервер ответил: ' + JSON.stringify(d));
+        f.hidden = true;
+        thanks.hidden = false;
+        thanks.focus();
+      })
+      .catch(function(x){
+        console.error('Ошибка отправки:', x);
+        showErr(FAIL);
+      })
+      .finally(function(){
+        clearTimeout(timer);
+        btn.disabled = false;
+        btn.textContent = btnText;
+      });
   });
 })();
 </script>
